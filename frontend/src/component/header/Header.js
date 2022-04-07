@@ -9,15 +9,20 @@ import{
     NavDropdown,
     Container
  } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
 <Navbar bg="primary" expand="lg" variant='dark'>
   <Container >
-    <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+    <Navbar.Brand >
+        <Link to='/'>
+        Navbar scroll
+            </Link>
+        </Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
-        <nav className='m-auto'>
+        <Nav className='m-auto'>
     <Form className="">
         <FormControl
           type="search"
@@ -26,13 +31,17 @@ export default function Header() {
           aria-label="Search"
         />
       </Form>
-      </nav>
+      </Nav>
       <Nav
         className="mr-auto"
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="/">MY Notes</Nav.Link>
+        <Nav.Link href="/">
+            <Link to='/MyNotes'>
+            MY Notes
+            </Link>
+            </Nav.Link>
         <NavDropdown title="prashant chavan" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">My Profile</NavDropdown.Item>
        
