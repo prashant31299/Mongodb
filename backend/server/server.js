@@ -1,12 +1,12 @@
 const express =require('express')
-const notes = require('../data/notes')
+const notes = require('../../frontend/src/data/notes')
 const dotenv= require('dotenv')
 
 const app =express()
 dotenv.config()
 
 app.get('/', (req,res)=>{
-    res.send("halllow node js app world ")
+    res.send("Api is running ")
 })
 
 app.get('/api/notes',(req,res)=>{

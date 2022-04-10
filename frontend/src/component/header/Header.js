@@ -42,7 +42,7 @@ export default function Header() {
             MY Notes
             </Link>
             </Nav.Link>
-        <NavDropdown title="prashant chavan" id="navbarScrollingDropdown">
+        <NavDropdown ttle="prashant chavan" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">My Profile</NavDropdown.Item>
        
           <NavDropdown.Item href="#action5">
