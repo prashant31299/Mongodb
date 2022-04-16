@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Accordion, Badge, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import MainSceen from '../../component/MainSceen'
-import notes from '../../data/notes'
+// import notes from '../../data/notes'
+import axios from 'axios'
 export default function MyNotes() {
+
+  const [notes,setNotes]= useState([])
+
   const deletHandler=(id)=>{
     if (window.confirm('are you sure ?')){
 
     }
   };
+
+  const  fetchNotes= async () =>{
+    const data =await axios.get('/api/notes')
+    // const data= await fetch('http://127.0.0.1:4000/api/notes')
+    const res=await data
+    setNotes(res.data)
+    // console.log(res.data);
+  }
+console.log(notes);
+  useEffect(()=>{
+    fetchNotes()
+  },[])
   return (
+
       <MainSceen title='welcome back prashant chavan'> 
     <Link to='/createnotes'>
       <Button style={{marginLeft:10,marginBottom:6}} size='lg'>
@@ -19,7 +36,7 @@ export default function MyNotes() {
 
           {notes.map((note)=>{
             return(
-              <Accordion>
+              <Accordion key={note._id}> 
            <Accordion.Item >
 
       <Card style ={{margin:10}} key={note._id}>
